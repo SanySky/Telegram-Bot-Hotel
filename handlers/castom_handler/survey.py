@@ -17,7 +17,7 @@ def get_name(message: Message) -> None:
         bot.set_state(message.from_user.id, UserInfoState.age, message.chat.id)
 
         with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
-            data['name'] = message.text
+            data["name"] = message.text
     else:
         bot.send_message(message.from_user.id, f'Имя может содержать только буквы')
 
@@ -29,7 +29,7 @@ def get_age(message: Message) -> None:
         bot.set_state(message.from_user.id, UserInfoState.country, message.chat.id)
 
         with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
-            data['age'] = message.text
+            data["age"] = message.text
     else:
         bot.send_message(message.from_user.id, f'Возраст может содержать только цифры')
 
@@ -40,7 +40,7 @@ def get_country(message: Message) -> None:
     bot.set_state(message.from_user.id, UserInfoState.city, message.chat.id)
 
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
-        data['country'] = message.text
+        data["country"] = message.text
 
 
 @bot.message_handler(state=UserInfoState.city)
@@ -50,7 +50,7 @@ def get_city(message: Message) -> None:
     bot.set_state(message.from_user.id, UserInfoState.number_telephone, message.chat.id)
 
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
-        data['city'] = message.text
+        data["city"] = message.text
 
 
 @bot.message_handler(content_types=['text', 'contact'], state=UserInfoState.number_telephone)
