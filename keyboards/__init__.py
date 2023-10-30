@@ -1,2 +1,2 @@
-from . import inline
+from . import other
 from . import reply
