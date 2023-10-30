@@ -8,5 +8,8 @@ class UserInfoState(StatesGroup):
     country = State()
     city = State()
     number_telephone = State()
+    low = State()
+    start = State()
+    help = State()
 
 
