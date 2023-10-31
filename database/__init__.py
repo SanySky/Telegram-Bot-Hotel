@@ -1,1 +1,1 @@
-from . import peewe_database
+from . import pewee_database
