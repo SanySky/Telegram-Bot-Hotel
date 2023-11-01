@@ -19,5 +19,5 @@ def send_bestdeal(message: Message) -> None:
     set_current_requests(chat_id, current_command='bestdeal')
     bot.send_message(
         chat_id, 'Вы выбрали - узнать топ отелей, наиболее подходящих по цене и расположению от центра.\n'
-        'В каком городе ищем?'
+                 'В каком городе ищем?'
     )

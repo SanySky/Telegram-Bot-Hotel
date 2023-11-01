@@ -14,7 +14,8 @@ from utils.misc.get_api import get_api
 @bot.message_handler(func=lambda message: 'city' == get_state(message.chat.id, 'states'))
 @logger.catch
 def find_a_city(message: Message) -> None:
-    """Функция осуществляет поиск города и предоставляет пользователю выбрать из результатов поиска.
+    """
+    Функция осуществляет поиск города и предоставляет пользователю выбрать из результатов поиска.
     """
     chat_id: int = message.chat.id
     url: str = "https://hotels4.p.rapidapi.com/locations/v2/search"

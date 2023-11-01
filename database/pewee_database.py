@@ -2,6 +2,7 @@ from peewee import Model, TextField, IntegerField
 
 from config_data.config import USER_DATABASE
 
+
 class Cities(Model):
     """
     Класс Cities используется для создания таблицы хранящих сведения о найденных городах в БД users_database
