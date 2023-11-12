@@ -1,2 +1,3 @@
-from . import other
+from . import calendar
+from . import inline
 from . import reply

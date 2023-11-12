@@ -1,31 +1,12 @@
-from loguru import logger
 from telebot.types import Message
 
-from handlers.default_handlers.start import bot_start
 from loader import bot
 
 
-@logger.catch
-@bot.message_handler(content_types="text")
+@bot.message_handler(func=lambda message: True)
 def bot_echo(message: Message) -> None:
-    """
-    Функция хендлер, перехватывает текстовые сообщения без указанного состояния.
-    """
-    if message.text.lower() in ('ghbdtn', 'привет'):
-        bot_start(message)
+    if message.text == 'привет':
+        bot.reply_to(message, f'Реагируем на слово "привет", И вам {message.from_user.full_name} - привет!')
     else:
-        bot.reply_to(message, "Я тебя не понимаю. Напиши /help.")
-
-
-@logger.catch
-@bot.message_handler(
-    content_types=[
-        "audio", "document", "photo", "sticker", "video",
-        "video_note", "video_note", "voice", "location", "contact"
-    ]
-)
-def message_reply(message: Message) -> None:
-    """
-    Функция отвечает на отличные от текстовых сообщения пользователя.
-    """
-    bot.reply_to(message, "Я тебя не понимаю. Напиши /help.")
+        bot.reply_to(message, "Эхо без состояния или фильтра.\nСообщение:"
+                              f"{message.text}")
