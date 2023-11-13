@@ -128,7 +128,8 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
             else:
                 break
     else:
-        bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {response_hotels.status_code}')
+        bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {response_hotels.status_code}',
+                         'Попробуйте осуществить поиск с другими параметрами')
     logger.info(f"Поиск окончен. User_id: {message.chat.id}")
     bot.send_message(message.chat.id, 'Поиск окончен!')
     bot.set_state(message.chat.id, None)
