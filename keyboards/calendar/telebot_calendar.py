@@ -295,7 +295,7 @@ class CallbackData:
                 value = str(value)
 
             if not value:
-                raise ValueError(f"Значение для части {part!r} не может быть пустым!'")
+                raise ValueError(f"Значение для части {part!r} не может быть пустым!")
             if self.sep in value:
                 raise ValueError(
                     f"Символ {self.sep!r} определяется как разделитель и не может использоваться в значениях частей"

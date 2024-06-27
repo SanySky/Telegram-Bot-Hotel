@@ -1,9 +1,11 @@
 import requests
 from config_data import config
+from dotenv import load_dotenv
+import os
 
 headers = {
     "content-type": "application/json",
-    "X-RapidAPI-Key": config.RAPID_API_KEY,
+    "X-RapidAPI-Key": os.getenv("RAPID_API_KEY"),
     "X-RapidAPI-Host": "hotels4.p.rapidapi.com"
 }
 
